@@ -9,6 +9,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.1.2"
+    "astro": "^5.1.2",
+    "astro-icon": "^1.1.5"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "open-props": "^1.7.10",
+    "postcss": "^8.4.49",
+    "postcss-jit-props": "^1.0.15"
   }
 }
