@@ -1,0 +1,104 @@
+---
+import CtaButton from "./CtaButton.astro";
+import { SquareMenu } from "lucide-react";
+
+const navLinks = [
+  {
+    name: "Home",
+    url: "/",
+    style: "transparent ",
+  },
+  {
+    name: "A propos",
+    url: "/about",
+    style: "transparent",
+  },
+  {
+    name: "Services",
+    url: "/services",
+    style: "transparent",
+  },
+  {
+    name: "Contact",
+    url: "/contact",
+    style: "primary",
+  },
+];
+---
+
+<script>
+  const toogleBtn = document.getElementById("toogle-btn");
+  const nav = document.getElementById("menu");
+
+  const links = document.querySelectorAll(".nav-link");
+
+  toogleBtn?.addEventListener("click", () => {
+    nav?.classList.toggle("open");
+  });
+
+  // Get the current URL path
+  const currentPath = window.location.pathname;
+
+  // Select all navigation links
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  // Loop through the links and add the 'active' class to the matching link
+  navLinks.forEach((link) => {
+    if (link.getAttribute("href") === currentPath) {
+      link.classList.add("active");
+    }
+  });
+</script>
+
+<div class="sticky top-0 navbar">
+  <div
+    class="container flex justify-between items-center bg-accent m-auto px-4 py-2 rounded-lg relative"
+  >
+    <img src="/images/UxDevLogo.svg" alt="logo" class="w-24" />
+    <nav
+      id="menu"
+      class="nav-menu container m-auto rounded-md bg-accent flex flex-col gap-6 justify-between items-center grow absolute left-0 top-16 sm:flex-row md:justify-end md:p-0 md:relative md:top-0"
+    >
+      <div class="md:flex md:justify-center md:basis-11/12">
+        <ul class="flex flex-col items-center gap-6 sm:flex-row">
+          {
+            navLinks.map((link) => (
+              <li role="none">
+                <a class=" nav-link capitalize" href={link?.url}>
+                  {link?.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <CtaButton text="Prendre un rdv" />
+    </nav>
+    <SquareMenu id="toogle-btn" className="text-primary md:hidden" />
+  </div>
+</div>
+
+<style>
+  .nav-link {
+    @apply hover:text-primary;
+  }
+
+  .nav-link.active {
+    @apply text-primary;
+  }
+
+  @media (max-width: 768px) {
+    .nav-menu {
+      max-height: 0;
+      padding: 0px;
+      overflow: hidden;
+      transition:
+        max-height 0.4s ease-in,
+        padding 0.4s ease-in;
+    }
+    .nav-menu.open {
+      padding: 16px;
+      max-height: 350px;
+    }
+  }
+</style>
