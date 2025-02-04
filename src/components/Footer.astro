@@ -1,0 +1,103 @@
+---
+import { navLinks } from "@/components/NavBar.astro";
+import { Input } from "@/components/ui/input";
+import CtaButton from "./CtaButton.astro";
+---
+
+<footer class="container m-auto pb-10 px-6 grid gap-6">
+  <div class="grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
+    <div>
+      <img src="/public/images/UxDevLogo.svg" alt="logo" />
+      <p>L'agence qui propulse les cabinets vers l'excellence !</p>
+    </div>
+    <div class="flex flex-col gap-6 sm:flex-row sm:gap-24">
+      <div class="menu">
+        <h3>Menu</h3>
+        <ul class="">
+          {
+            navLinks.map((link) => (
+              <li role="none">
+                <a class=" nav-link capitalize" href={link?.url}>
+                  {link?.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div class="contact">
+        <h3>Contact</h3>
+        <p>Téléphone : +123 456 789</p>
+        <p>Email : @example.com</p>
+        <p>Address Line 01</p>
+      </div>
+    </div>
+    <div>
+      <h3 class="uppercase tracking-widest mb-6">Souscrivez maintenant!</h3>
+      <div class="flex gap-4">
+        <Input
+          placeholder="Entrez votre mail"
+          className="border-accent h-34 focus:border-primary-300"
+        />
+
+        <CtaButton text="Envoyer" />
+      </div>
+    </div>
+  </div>
+  <div
+    class="privacy-policy flex flex-col items-center gap-6 lg:flex-row lg:justify-between"
+  >
+    <div>
+      <p id="copyright">UxDev Fusion . Tous droits réservés.</p>
+    </div>
+    <div>
+      <ul class="flex flex-col items-center gap-6 md:flex-row">
+        <li class="privacy"><a href="">Politique de Confidentialité</a></li>
+        <li class="privacy"><a href="">Cookies</a></li>
+      </ul>
+    </div>
+    <div class="flex gap-4">
+      <a href=""
+        ><img
+          class="size-10"
+          src="/public/images/Linkedin.svg"
+          alt="linkedin logo"
+        /></a
+      >
+      <a href=""
+        ><img
+          class="size-10"
+          src="/public/images/facebook.svg"
+          alt="facebook logo"
+        /></a
+      >
+      <a href=""
+        ><img
+          class="size-10"
+          src="/public/images/twitter.svg"
+          alt="twitter logo"
+        /></a
+      >
+    </div>
+  </div>
+
+  <style>
+    h3 {
+      @apply font-semibold;
+    }
+
+    li,
+    p {
+      @apply text-accent-foreground mt-4;
+    }
+
+    #copyright,
+    .privacy {
+      @apply text-foreground mt-0;
+    }
+
+    a:hover {
+      @apply text-primary;
+    }
+  </style>
+</footer>
