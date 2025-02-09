@@ -1,6 +1,8 @@
 ---
+import { Image } from "astro:assets";
 import CtaButton from "./CtaButton.astro";
 import { SquareMenu } from "lucide-react";
+import UxDevLogo from "@/assets/images/UxDevLogo.svg";
 
 export const navLinks = [
   {
@@ -50,11 +52,11 @@ export const navLinks = [
   });
 </script>
 
-<div class="sticky top-0 navbar">
+<div class="sticky top-0 navbar mb-20">
   <div
     class="container flex justify-between items-center bg-accent m-auto px-4 py-2 rounded-lg relative"
   >
-    <img src="/images/UxDevLogo.svg" alt="logo" class="w-24" />
+    <Image loading="eager" class="w-24" src={UxDevLogo} alt="logo" />
     <nav
       id="menu"
       class="nav-menu container m-auto rounded-md bg-accent flex flex-col gap-6 justify-between items-center grow absolute left-0 top-16 sm:flex-row md:justify-end md:p-0 md:relative md:top-0"

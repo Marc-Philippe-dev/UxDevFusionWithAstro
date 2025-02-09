@@ -1,0 +1,14 @@
+---
+const { text = "This is a text" } = Astro.props;
+---
+
+<div class="m-auto p-4 text-center rounded-full border border-primary conic">
+  {text}
+</div>
+
+<style>
+  .conic {
+    background: radial-gradient(ellipse at top, rgb(0, 0, 0, 0), transparent),
+      radial-gradient(ellipse at bottom, rgb(207, 144, 42, 0.4), transparent);
+  }
+</style>

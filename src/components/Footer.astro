@@ -1,13 +1,16 @@
 ---
+import { Image } from "astro:assets";
 import { navLinks } from "@/components/NavBar.astro";
 import { Input } from "@/components/ui/input";
 import CtaButton from "./CtaButton.astro";
+
+import UxDevLogo from "@/assets/images/UxDevLogo.svg";
 ---
 
 <footer class="container m-auto pb-10 px-6 grid gap-6">
   <div class="grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
     <div>
-      <img src="/public/images/UxDevLogo.svg" alt="logo" />
+      <Image src={UxDevLogo} alt="logo" />
       <p>L'agence qui propulse les cabinets vers l'excellence !</p>
     </div>
     <div class="flex flex-col gap-6 sm:flex-row sm:gap-24">
@@ -58,26 +61,14 @@ import CtaButton from "./CtaButton.astro";
     </div>
     <div class="flex gap-4">
       <a href=""
-        ><img
-          class="size-10"
-          src="/public/images/Linkedin.svg"
-          alt="linkedin logo"
-        /></a
+        >
+		<i class="fa-brands fa-linkedin-in"></i> 
+		</a
       >
-      <a href=""
-        ><img
-          class="size-10"
-          src="/public/images/facebook.svg"
-          alt="facebook logo"
-        /></a
-      >
-      <a href=""
-        ><img
-          class="size-10"
-          src="/public/images/twitter.svg"
-          alt="twitter logo"
-        /></a
-      >
+      <a href=""> <i class="fa-brands fa-facebook-f"></i></a>
+      <a href="">
+        <i class="fa-brands fa-twitter"></i>
+      </a>
     </div>
   </div>
 
