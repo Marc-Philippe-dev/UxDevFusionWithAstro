@@ -1,0 +1,214 @@
+---
+import type { ToolsOrServices } from "@/models/toolsOrServices";
+import CtaButton from "../CtaButton.astro";
+import SectionIntroducer from "../SectionIntroducer.astro";
+
+import { getToolsOrServicesByCategory } from "@/scripts/filtering";
+
+const serviceTools: ToolsOrServices[] = [
+  {
+    category: "ui/ux",
+    imgUrl: "/images/illustrator.svg",
+    description: "illustrator logo",
+  },
+  { category: "ui/ux", imgUrl: "/images/xd.svg", description: "xd logo" },
+  {
+    category: "ui/ux",
+    imgUrl: "/images/figma.svg",
+    description: "figma logo",
+  },
+  {
+    category: "ui/ux",
+    imgUrl: "/images/sketch.svg",
+    description: "sketch logo",
+  },
+  {
+    category: "ui/ux",
+    imgUrl: "/images/photoshop.svg",
+    description: "photoshop logo",
+  },
+  {
+    category: "web",
+    imgUrl: "/images/html5.svg",
+    description: "html5 logo",
+  },
+  {
+    category: "web",
+    imgUrl: "/images/css3.svg",
+    description: "css3 logo",
+  },
+  {
+    category: "web",
+    imgUrl: "/images/typescript.svg",
+    description: "typescript logo",
+  },
+  {
+    category: "web",
+    imgUrl: "/images/node-js.svg",
+    description: "node-js logo",
+  },
+  {
+    category: "web",
+    imgUrl: "/images/react.svg",
+    description: "react logo",
+  },
+  {
+    category: "mobile",
+    imgUrl: "/images/android.svg",
+    description: "android logo",
+  },
+  {
+    category: "mobile",
+    imgUrl: "/images/app-store.svg",
+    description: "app-store logo",
+  },
+  {
+    category: "mobile",
+    imgUrl: "/images/flutter.svg",
+    description: "flutter logo",
+  },
+  {
+    category: "mobile",
+    imgUrl: "/images/app-store2.svg",
+    description: "app-store2 logo",
+  },
+  {
+    category: "mobile",
+    imgUrl: "/images/iOS.svg",
+    description: "iOS logo",
+  },
+];
+---
+
+<section>
+  <div class="container flex flex-col items-center justify-center gap-12">
+    <SectionIntroducer text="Votre référence en digitalistion" />
+    <h2 class="text-center lg:w-3/4">Nos services</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-6">
+      <div class="grid gap-8 justify-items-center md:justify-items-start">
+        <div
+          class="flex items-center rounded-full text-foreground bg-background"
+        >
+          <div class="bg-gray-50/25 p-2 rounded-lg">
+            <img
+              loading="lazy"
+              src="/images/user-experience.svg"
+              alt="ui/ux logo"
+              class="size-10"
+            />
+          </div>
+          <h3>UI/UX Design</h3>
+        </div>
+        <p class="max-w-[90%] text-justify">
+          Experts en design UI/UX, nous créons des interfaces intuitives et
+          attrayantes, offrant une expérience fluide et engageante pour
+          maximiser la satisfaction utilisateur et valoriser votre projet.
+        </p>
+        <div>
+          <CtaButton text="Prendre une rdv" className="flex-grow-0" />
+        </div>
+      </div>
+      <div class="flex items-center justify-center gap-1 md:gap-4">
+        {
+          getToolsOrServicesByCategory("ui/ux", serviceTools).map(
+            (tool: ToolsOrServices) => (
+              <div class="bg-gray-50/25 p-2 rounded-lg">
+                <img
+                  loading="lazy"
+                  src={tool.imgUrl}
+                  alt={tool.description}
+                  class="size-10"
+                />
+              </div>
+            )
+          )
+        }
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-6">
+      <div class="grid gap-8 justify-items-center md:justify-items-start">
+        <div
+          class="flex items-center rounded-full text-foreground bg-background"
+        >
+          <div class="bg-gray-50/25 p-2 rounded-lg">
+            <img
+              loading="lazy"
+              src="/images/user-experience.svg"
+              alt="ui/ux logo"
+              class="size-10"
+            />
+          </div>
+          <h3>Développement Web</h3>
+        </div>
+        <p class="max-w-[90%] text-justify">
+          Nous développons des sites web responsive modernes et performants,
+          conçus sur mesure pour améliorer votre visibilité, attirer des clients
+          et optimiser vos processus avec des solutions fiables et évolutives.
+        </p>
+        <div>
+          <CtaButton text="Prendre une rdv" className="flex-grow-0" />
+        </div>
+      </div>
+      <div
+        class="flex items-center md:order-first justify-center gap-1 md:gap-4"
+      >
+        {
+          getToolsOrServicesByCategory("web", serviceTools).map((tool) => (
+            <div class="bg-gray-50/25 p-2 rounded-lg">
+              <img
+                loading="lazy"
+                src={tool.imgUrl}
+                alt={tool.description}
+                class="size-10"
+              />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-6">
+      <div class="grid gap-8 justify-items-center md:justify-items-start">
+        <div
+          class="flex items-center rounded-full text-foreground bg-background"
+        >
+          <div class="bg-gray-50/25 p-2 rounded-lg">
+            <img
+              loading="lazy"
+              src="/images/user-experience.svg"
+              alt="ui/ux logo"
+              class="size-10"
+            />
+          </div>
+          <h3>Développement Mobile</h3>
+        </div>
+        <p class="max-w-[90%] text-justify">
+          Nous concevons des applications mobiles sur mesure, intuitives et
+          performantes, pour optimiser l’expérience utilisateur, fidéliser vos
+          clients et dynamiser votre croissance.
+        </p>
+        <div>
+          <CtaButton text="Prendre une rdv" className="flex-grow-0" />
+        </div>
+      </div>
+      <div class="flex items-center justify-center gap-1 md:gap-4">
+        {
+          getToolsOrServicesByCategory("mobile", serviceTools).map((tool) => (
+            <div class="bg-gray-50/25 p-2 rounded-lg">
+              <img
+                loading="lazy"
+                src={tool.imgUrl}
+                alt={tool.description}
+                class="size-10"
+              />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <CtaButton text="Nous contacter" />
+  </div>
+</section>

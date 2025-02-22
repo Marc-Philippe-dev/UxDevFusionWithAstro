@@ -7,7 +7,7 @@ import CtaButton from "./CtaButton.astro";
 import UxDevLogo from "@/assets/images/UxDevLogo.svg";
 ---
 
-<footer class="container m-auto pb-10 px-6 grid gap-6">
+<footer class="container footer m-auto pb-10 grid gap-6">
   <div class="grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
     <div>
       <Image src={UxDevLogo} alt="logo" />
@@ -60,11 +60,9 @@ import UxDevLogo from "@/assets/images/UxDevLogo.svg";
       </ul>
     </div>
     <div class="flex gap-4">
-      <a href=""
-        >
-		<i class="fa-brands fa-linkedin-in"></i> 
-		</a
-      >
+      <a href="">
+        <i class="fa-brands fa-linkedin-in"></i>
+      </a>
       <a href=""> <i class="fa-brands fa-facebook-f"></i></a>
       <a href="">
         <i class="fa-brands fa-twitter"></i>
@@ -89,6 +87,15 @@ import UxDevLogo from "@/assets/images/UxDevLogo.svg";
 
     a:hover {
       @apply text-primary;
+    }
+    .container {
+      padding-inline: 1rem;
+    }
+    
+    @media (min-width: 40em) {
+      .container {
+        padding-inline: 0px;
+      }
     }
   </style>
 </footer>

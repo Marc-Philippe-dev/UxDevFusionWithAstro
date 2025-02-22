@@ -1,0 +1,48 @@
+---
+import Image from "astro/components/Image.astro";
+import { Accordion } from "@/components/Accordion";
+
+import performance from "@/assets/images/performance.svg";
+
+const accordionData = [
+  {
+    title: "La collaboration étroite avec les clients",
+    description:
+      "Nous croyons que la clé du succès réside dans une collaboration active avec nos clients. Nous vous impliquons à chaque étape du projet, garantissant ainsi que vos besoins et vos visions se réalisent dans chaque détail de notre solution.",
+  },
+  {
+    title: "La livraison de solutions répondant aux attentes des clients",
+    description:
+      " Nous nous engageons à fournir des solutions qui répondent à vos besoins et à vos attentes. Nous nous efforçons de vous fournir des solutions qui vous aident à atteindre vos objectifs et à réaliser votre vision.",
+  },
+  {
+    title: "L’ utilisation d’outils de gestion deprojet de pointe",
+    description:
+      "Nous utilisons des outils de gestion de projet de pointe pour garantir que votre projet est livré à temps et dans les limites du budget. Nous nous engageons à vous fournir des solutions de qualité qui répondent à vos besoins et à vos attentes.",
+  },
+];
+---
+
+<section>
+  <div
+    class="container grid grid-cols-1 justify-start items-center gap-8 lg:grid-cols-2 lg:gap-0"
+  >
+    <div class="flex flex-col items gap-4 justify-center lg:order-1">
+      <h2 class="text-center lg:text-start">
+        Notre gestion de projet infomatique
+      </h2>
+      <p class="text-center lg:text-start">
+        Nous vous accompagnons dans la réalisation de vos projets informatiques
+        en vous proposant des solutions sur mesure et adaptées à vos besoins.
+      </p>
+      <Accordion data={accordionData} client:idle />
+    </div>
+    <Image
+      loading="eager"
+      src={performance}
+      alt="performance describer"
+      class="max-h-[500px]"
+      loading="lazy"
+    />
+  </div>
+</section>

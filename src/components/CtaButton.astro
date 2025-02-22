@@ -3,7 +3,9 @@ import { Button } from "@/components/ui/button";
 const { text = "Default" } = Astro.props;
 ---
 
-<div class="inline-flex p-0.5 border rounded-md cta-btn" >
+<div
+  class="inline-flex p-0.5 border rounded-md cta-btn-wrapper"
+>
   <Button
     variant="outline"
     className=" bg-gradient-to-r from-primary-950 to-primary-500 capitalize"
@@ -12,8 +14,13 @@ const { text = "Default" } = Astro.props;
 </div>
 
 <style>
- .cta-btn:hover{
-	scale: 1.05;
-	transition: scale 0.4s ease-out;
- }
+  .cta-btn-wrapper{
+    flex: 0 0 auto;
+    /* scale: 1;
+    transition: scale 0.4s ease-out; */
+  }
+  .cta-btn-wrapper:hover {
+    scale: 1.05;
+    transition: scale 0.4s ease-out;
+  }
 </style>

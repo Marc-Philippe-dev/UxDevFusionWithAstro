@@ -1,0 +1,126 @@
+---
+import CtaButton from "../CtaButton.astro";
+import { Button } from "../ui/button";
+
+const projects = [
+  {
+    categry: "design",
+    title: "Design",
+    description:
+      "Chartre graphique de l'entité GETCC qui est spécilisé dans l'architecture et l'audit. ",
+    imgUrl: "/images/test.png",
+  },
+  {
+    categry: "web",
+    title: "Développement web",
+    description:
+      "Un Restaurant spécialisé dans la Restauration à Vin, la Cave à vin, le Bar à Vin et le service Traiteur.",
+    imgUrl: "/images/test.png",
+  },
+  {
+    categry: "mobile",
+    title: "Développement mobile",
+    description:
+      "Plateforme de création d’application IA et de propositions de projets.",
+    imgUrl: "/images/test.png",
+  },
+];
+
+---
+
+<section>
+  <div class="container flex flex-col items-center justify-center gap-12">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-end">
+      <div>
+        <h2>Nos Réalisations</h2>
+        <p>
+          Découvrez un aperçu de nos réalisations à travers une sélection de
+          projets qui illustrent notre savoir-faire et notre créativité.
+        </p>
+      </div>
+      <div class="col-span-2">
+        <div
+          class="py-3 bg-gray-200/25 flex items-end justify-around rounded-full"
+        >
+          <Button
+            className="filterBtn  flex items-center rounded-full text-foreground bg-background "
+          >
+            <img src="images/design.svg" alt="design logo" />
+            <span class="hidden md:inline">Design</span>
+          </Button>
+          <Button
+            className="filterBtn  flex items-center rounded-full text-foreground bg-background "
+          >
+            <img src="images/web.svg" alt="design logo" />
+            <span class="hidden md:inline">Développement web </span>
+          </Button>
+          <Button
+            className="filterBtn  flex items-center rounded-full text-foreground bg-background "
+          >
+            <img src="images/mobile.svg" alt="design logo" />
+            <span class="hidden md:inline">Développement mobile</span>
+          </Button>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {
+          projects.map((accomplishment) => (
+            <div class="bg-gray-50/25 p-4 rounded-lg  inline-flex items-start flex-col gap-4 ">
+              <img
+                loading="lazy"
+                src={accomplishment.imgUrl}
+                alt={accomplishment.title}
+                class="width-80 rounded-lg"
+              />
+              <h3>{accomplishment.title}</h3>
+              <p>{accomplishment.description}</p>
+              <div class="inline-flex self-center">
+                <CtaButton text="Découvrir plus" className="">
+                  <a href="" />
+                </CtaButton>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .active {
+    @apply bg-primary-500;
+  }
+</style>
+
+<script>
+  const filterBtns = document.querySelectorAll(".filterBtn");
+  console.log(filterBtns);
+  // filterBtns.forEach((btn) => {
+  //   btn.addEventListener("click", (e) => {
+  //     const type = e.target.innerText.trim().toLowerCase();
+  //     console.log(type);
+  //     const projects = document.querySelectorAll(".accomplishment");
+  //     projects.forEach((project) => {
+  //       if (project.dataset.type === type || type === "all") {
+  //         project.style.display = "block";
+  //       } else {
+  //         project.style.display = "none";
+  //       }
+  //     });
+  //   });
+  // });
+  // const projects = document.querySelectorAll(".accomplishment");
+
+  filterBtns.forEach((btn)=>{
+    btn.addEventListener("click" ,(e) => {
+      filterBtns.forEach((btn) => {
+        btn.classList.remove("active");
+      });
+      btn.classList.add("active");
+      console.log("Button clicked");
+    })
+  })
+</script>
