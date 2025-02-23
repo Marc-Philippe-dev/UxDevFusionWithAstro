@@ -25,7 +25,6 @@ const projects = [
     imgUrl: "/images/test.png",
   },
 ];
-
 ---
 
 <section>
@@ -67,7 +66,17 @@ const projects = [
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {
           projects.map((accomplishment) => (
-            <div class="bg-gray-50/25 p-4 rounded-lg  inline-flex items-start flex-col gap-4 ">
+            <div class="relative bg-gray-50/25 p-4 rounded-lg  inline-flex items-start flex-col gap-4  hover:border hover:border-primary-400 card ">
+              <img
+                src="/images/TopSparksOrnament.svg"
+                alt="decorative image"
+                class="absolute size-6 -top-2 -left-2 hidden spark"
+              />
+              <img
+                src="/images/SparksOrnament.svg"
+                alt="decorative image"
+                class="absolute size-6 -bottom-2 -right-2 hidden spark"
+              />
               <img
                 loading="lazy"
                 src={accomplishment.imgUrl}
@@ -75,7 +84,7 @@ const projects = [
                 class="width-80 rounded-lg"
               />
               <h3>{accomplishment.title}</h3>
-              <p>{accomplishment.description}</p>
+              <p class="text-justify">{accomplishment.description}</p>
               <div class="inline-flex self-center">
                 <CtaButton text="Découvrir plus" className="">
                   <a href="" />
@@ -93,34 +102,24 @@ const projects = [
   .active {
     @apply bg-primary-500;
   }
+
+ .card:hover .spark{
+  display: block;
+ }
+
 </style>
 
 <script>
   const filterBtns = document.querySelectorAll(".filterBtn");
   console.log(filterBtns);
-  // filterBtns.forEach((btn) => {
-  //   btn.addEventListener("click", (e) => {
-  //     const type = e.target.innerText.trim().toLowerCase();
-  //     console.log(type);
-  //     const projects = document.querySelectorAll(".accomplishment");
-  //     projects.forEach((project) => {
-  //       if (project.dataset.type === type || type === "all") {
-  //         project.style.display = "block";
-  //       } else {
-  //         project.style.display = "none";
-  //       }
-  //     });
-  //   });
-  // });
-  // const projects = document.querySelectorAll(".accomplishment");
-
-  filterBtns.forEach((btn)=>{
-    btn.addEventListener("click" ,(e) => {
+  
+  filterBtns.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
       filterBtns.forEach((btn) => {
         btn.classList.remove("active");
       });
       btn.classList.add("active");
       console.log("Button clicked");
-    })
-  })
+    });
+  });
 </script>

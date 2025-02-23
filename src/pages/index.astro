@@ -3,10 +3,15 @@ import Layout from "../layouts/Layout.astro";
 
 import "../styles/global-styles.css";
 
+import SectionIntroducer from "@/components/SectionIntroducer.astro";
+
+
 import Hero from "@/components/home/hero.astro";
 import Workflow from "@/components/home/workflow.astro";
 import Services from "@/components/home/services.astro";
 import Accomplishments from "@/components/home/accomplishments.astro";
+import CtaCard from "@/components/CtaCard.astro";
+import Testimonies from "@/components/home/testimonies";
 ---
 
 <Layout>
@@ -60,7 +65,15 @@ import Accomplishments from "@/components/home/accomplishments.astro";
 
   <!-- Accomplishments -->
   <Accomplishments />
-  <!--  -->
+
+  <!-- CTA -->
+  <CtaCard className="m-auto" />
+
+  <!-- Testimonies -->
+  <section class="flex flex-col items-center ">
+    <SectionIntroducer text="Quelques témoignages"  />
+    <Testimonies client:load />
+  </section>
 </Layout>
 
 <style>
