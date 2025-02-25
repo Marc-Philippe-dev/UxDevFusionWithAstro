@@ -1,7 +1,223 @@
 ---
+import CtaCard from "@/components/CtaCard.astro";
+import SectionIntroducer from "@/components/SectionIntroducer.astro";
 import Layout from "@/layouts/Layout.astro";
+import { CircleCheck } from "lucide-react";
+
+const principles = [
+  {
+    title: "Innovation",
+    description:
+      "L’ innovons est au coeur des projets pour offrir des solutions à la pointe de la technologie.",
+    imgUrl: "images/Icon1.png",
+  },
+  {
+    title: "Croissance",
+    description:
+      "Nous favorisons la croissance en adaptant constamment nos solutions à vos besoins évolutifs. ",
+    imgUrl: "images/Icon2.png",
+  },
+  {
+    title: "Intégrité",
+    description:
+      "Nous garantissons transparence et honnêteté dans toutes nos actions, établissant ainsi des relations de confiance solides.",
+    imgUrl: "images/Icon3.png",
+  },
+  {
+    title: "Travail d'équipe",
+    description:
+      "Le travail d'équipe nous permet de maximiser notre collaboration et l'efficacité dans chaque projet.",
+    imgUrl: "images/Icon4.png",
+  },
+  {
+    title: "Engagement",
+    description:
+      "Le travail d'équipe nous permet de maximiser notre collaboration et l'efficacité dans chaque projet.",
+    imgUrl: "images/Icon5.png",
+  },
+  {
+    title: "Positivité",
+    description:
+      "Positiver su chaque aspect de projet nous permet de garantir un travail efficace et agréable.",
+    imgUrl: "images/Icon6.png",
+  },
+];
 ---
 
-<Layout >
-	
+<Layout>
+  <!-- Hero -->
+  <section>
+    <div class="container flex flex-col items gap-12">
+      <h1 class="text-center max-w-96 mx-auto">
+        Parlons vous un peu de nous ....
+      </h1>
+      <SectionIntroducer text="Qui sommes-nous?" />
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="flex flex-col gap-8">
+          <div>
+            <img
+              src="images/work.svg"
+              alt="working personne"
+              class="rounded-lg"
+            />
+          </div>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div
+              class="flex flex-col items-center rounded-lg p-4 bg-primary-400"
+            >
+              <span class="text-2xl font-semibold">+5</span>
+              <p class="text-center text-white">Projets déployés</p>
+            </div>
+            <div class="flex flex-col items-center bg-white rounded-lg p-4">
+              <span class="text-2xl text-black font-semibold">90%</span>
+              <p class="text-center text-primary-400">Clients satisfaits</p>
+            </div>
+            <div
+              class="flex flex-col items-center bg-primary/10 rounded-lg p-4"
+            >
+              <span class="text-2xl font-semibold">+100K</span>
+              <p class="text-center text-primary-500">De ligne de code</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col gap-8">
+          <div class="border-b border-gray-200 pb-8">
+            <h2 class="capitalize">A Propos De UxDev fusion</h2>
+            <p>
+              Chez UxDev Fusion, nous sommes passionnés par la création de
+              solutions numériques innovantes. Nous sommes une équipe d'experts
+              en développement web, applications mobiles et design graphique,
+              dédiée à transformer vos idées en réalité.
+            </p>
+          </div>
+          <div class="flex flex-col gap-8">
+            <div class="flex justify-start items-center gap-4">
+              <div class="p-6 bg-primary/10 rounded-lg">
+                <img src="images/clock.svg" alt="clock" />
+              </div>
+              <div class="flex flex-col justify-between gap-4">
+                <h3 class="text-lg">Disponible 24h/24</h3>
+                <p>
+                  Nos services restent accessibles à tout moment, sans
+                  interruption.
+                </p>
+              </div>
+            </div>
+            <div class="flex justify-start items-center gap-4">
+              <div class="p-6 bg-primary/10 rounded-lg">
+                <img src="images/prestation.svg" alt="prestation" />
+              </div>
+              <div class="flex flex-col justify-between gap-4">
+                <h3 class="text-lg">Disponible présentations</h3>
+                <p>
+                  Nous sommes à votre disposition pour vous présenter ceux sur
+                  quoi nous avons travaillé.
+                </p>
+              </div>
+            </div>
+            <div>
+              <button
+                class="flex gap-2 items-center bg-primary-400 py-2 px-8 rounded-full hover:bg-primary-500"
+              >
+                <i class="fa-solid fa-phone border-0 text-md"></i>
+                <a href="">Nous contacter</a>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Missions -->
+  <section>
+    <div class="container flex flex-col gap-12">
+      <SectionIntroducer text="Notre Mission" />
+      <div class="grid lg:grid-cols-2 gap-6">
+        <div class="flex flex-col gap-8">
+          <h3>
+            Chez UxDev Fusion, notre mission repose sur trois piliers
+            essentiels:
+          </h3>
+          <div class="flex items-center gap-4">
+            <span>
+              <CircleCheck className="bg-primary-400 rounded-full" />
+            </span>
+            <p>
+              Allier créativité et technologie pour des expériences numériques
+              uniques.
+            </p>
+          </div>
+          <div class="flex items-center gap-4">
+            <span>
+              <CircleCheck className="bg-primary-400 rounded-full" />
+            </span>
+            <p>
+              Offrir des solutions sur mesure, intuitives et performantes
+              au-delà de vos attentes.
+            </p>
+          </div>
+          <div class="flex items-center gap-4">
+            <span>
+              <CircleCheck className="bg-primary-400 rounded-full" />
+            </span>
+            <p>
+              Accorder une attention minutieuse aux détails pour assurer votre
+              succès numérique.
+            </p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div>
+            <img
+              src="images/working_team1.svg"
+              alt="working team"
+              class="rounded-xl"
+            />
+          </div>
+          <div>
+            <img
+              src="images/working_team2.svg"
+              alt="working team"
+              class="rounded-xl"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Principles -->
+  <section>
+    <div class="container flex flex-col gap-10">
+      <SectionIntroducer text="Nos Principes" />
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {
+          principles.map((principle) => (
+            <div class="flex flex-col justify-center items-center gap-4 p-4 principle-card hover:bg-primary/10 hover:rounded-lg hover:border hover:border-primary-500">
+              <img
+                src={principle.imgUrl}
+                alt="illustrative image of the principle"
+              />
+              <h3 class="principle-title">{principle.title}</h3>
+              <p class="text-center max-w-[90%]">{principle.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="mb-24 md:mb-56">
+    <div class="container">
+      <CtaCard />
+    </div>
+  </section>
 </Layout>
+
+<style>
+  .principle-card:hover .principle-title {
+    @apply text-primary-500;
+  }
+</style>
