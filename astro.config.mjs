@@ -7,8 +7,8 @@ import react from "@astrojs/react";
 // https://astro.build/config
 
 export default defineConfig({
-  site: "https://marc-philippe-dev.github.io",
-  base: "/UxDevFusionWithAstro/",
+  // site: "https://marc-philippe-dev.github.io",
+  // base: "/UxDevFusionWithAstro/",
   integrations: [
     icon(),
     tailwind({
